@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    body, p, div {
+      margin: 0;
+      padding: 0;
+    }
+    .head {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      background: rgba(101, 228, 63, 0.5);
+      color: white;
+    }
+
+    #add-note {
+      padding: 8px 20px;
+      cursor: pointer;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    #title {
+      padding: 10px;
+      font-size: larger;
+    }
+    #login {
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+    
+    .background {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background: url("https://ooo.0o0.ooo/2017/09/28/59cc7520519c7.png ");
+      z-index: -1;
+      background-size:100% 100%;
+    }
+    ul {
+      list-style: none;
+    }
+    div#note-wrap {
+      padding: 10px;
+    }
+    ul.note {
+      display: block;
+      width: 100%;
+      margin: 0 auto;
+      position: relative;
+
+    }
+
+
+    .note-title {
+      text-align: center;
+      padding: 5px 10px;
+      background: #9ea9ff;
+      font-weight: bold;
+    }
+    .note-content {
+      padding: 0px 5px 20px;
+      min-height: 120px;
+      font-size: 14px;
+    }
+    .note-item {
+      position:absolute;
+      display: block;
+      width: 150px;
+      background: #ffc5fa;
+      margin: 10px;
+      transition: all 1s;
+    }
+    .note-item>.before {
+      margin: 8px 4px;
+      height: 14px;
+      width: 14px;
+      content: '';
+      float: left;
+      border-radius: 50%;
+      background: #cec852;
+    }
+
+    .delete-note {
+      float: right;
+      margin: 4px 5px;
+      font-size: small;
+      color: red;
+      cursor: pointer;
+    }
+
+    .drag-note {
+      transition: none;
+      opacity: 0.8;
+      cursor: move;
+    }
+  </style>
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="head">
+  <p id="add-note"> + </p>
+  <p id="title">Node Pad</p>
+  <div id="login">Login</div>
+</div>
+<div class="content">
+  <div class="background"></div>
+  <div id="note-wrap">
+    <ul class="note">
+      <li class="note-item" onmove="no">
+        <div class="before"></div>
+        <p class="delete-note">x</p>
+        <div class="note-title" contenteditable="true" edit="no">first note</div>
+        <div class="note-content" contenteditable="true" edit="no">请输入。。。</div>
+      </li>
+    </ul>
+  </div>
+</div>
+<script src="js/addnote.js"></script>
+</body>
+</html>

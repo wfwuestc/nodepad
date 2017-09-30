@@ -1,11 +1,24 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><% title %></title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<div class="head">
+  <p id="add-note"> + </p>
+  <p id="title">Node Pad</p>
+  <div id="login"><a href="/auth/github">Login</a></div>
+</div>
+<div class="content">
+  <div class="background"></div>
+  <div id="note-wrap">
+    <ul class="note">
+    </ul>
+  </div>
+</div>
+<div class="sort">SORT</div>
+<script src="js/index.js"></script>
+</body>
 </html>

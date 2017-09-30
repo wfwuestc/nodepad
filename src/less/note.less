@@ -1,0 +1,65 @@
+ul {
+  list-style: none;
+}
+
+ul.note {
+  display: block;
+  margin: 0 auto;
+  position: relative;
+}
+
+.note-title {
+  text-align: center;
+  padding: 5px 10px;
+  background: #9ea9ff;
+  font-weight: bold;
+}
+.note-content {
+  padding: 5px 5px 20px;
+  min-height: 150px;
+  font-size: 14px;
+}
+.note-item {
+  position:absolute;
+  display: block;
+  width: 165px;
+  background: #ffc5fa;
+  margin: 20px 10px;
+  transition: all 1s;
+  &:hover {
+    .delete-note {
+      opacity: 1;
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}
+.note-item>.before {
+  margin: 8px 4px;
+  height: 14px;
+  width: 14px;
+  content: '';
+  float: left;
+  cursor: move;
+  border-radius: 50%;
+  background: #cec852;
+}
+
+.delete-note {
+  float: right;
+  margin: 0px 5px;
+  color: red;
+  height: 25px;
+  line-height: 25px;
+  cursor: pointer;
+  transition: all 0.5s;
+  text-align: center;
+  opacity: 0;
+}
+
+.drag-note {
+  transition: none;
+  opacity: 0.8;
+  z-index: 5;
+}
