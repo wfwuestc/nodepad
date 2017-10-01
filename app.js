@@ -4,9 +4,12 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var passport = require('passport');
+var session = require('express-session');
 
 var index = require('./routes/index');
 var api = require('./routes/api');
+var auth = require('./routes/auth');
 
 var app = express();
 
@@ -21,12 +24,17 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+//passport的中间件
+app.use(session({secret: 'sessionsecret'}));
+app.use(passport.initialize());
+app.use(passport.session());
 
-app.use('/wfw', function(req, res, next) {
-	res.send('hello wfw!')
-})
+
 app.use('/', index);
+app.use('/auth', auth);
 app.use('/api', api);
+
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

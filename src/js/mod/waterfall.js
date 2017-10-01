@@ -10,7 +10,7 @@ define(['jquery'],function ($) {
     for (var i = 0; i < colNum; i++) {
       colSumHeight[i] = 0
     }
-    console.log(colSumHeight)
+    
     $('.note-item').each(function () {
       var cur = $(this)
       var idx = 0

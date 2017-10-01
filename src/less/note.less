@@ -11,28 +11,46 @@ ul.note {
 .note-title {
   text-align: center;
   padding: 5px 10px;
-  background: #9ea9ff;
+  background: #efeca2;
   font-weight: bold;
+  &:focus {
+      outline:none;
+  }
 }
 .note-content {
   padding: 5px 5px 20px;
   min-height: 150px;
   font-size: 14px;
+  &:focus {
+    outline:none;
+  }
 }
 .note-item {
   position:absolute;
   display: block;
   width: 165px;
-  background: #ffc5fa;
+  background: #d8e095;
   margin: 20px 10px;
   transition: all 1s;
   &:hover {
     .delete-note {
       opacity: 1;
       &:hover {
-        color: white;
+        color: #ff0a00;
+        transform: scale(1.5);
       }
     }
+  }
+  .username, .time {
+    text-align: right;
+    padding-right: 5px;
+    font-size: small;
+  }
+  .username {
+    color: #2e52a2;
+  }
+  .time {
+    color: #2e52a2;
   }
 }
 .note-item>.before {
@@ -48,14 +66,17 @@ ul.note {
 
 .delete-note {
   float: right;
-  margin: 0px 5px;
-  color: red;
-  height: 25px;
-  line-height: 25px;
+  margin: 10px 5px;
+  color: #ff1207;
   cursor: pointer;
   transition: all 0.5s;
   text-align: center;
   opacity: 0;
+}
+.delete-note:before {
+  content: "\e61c";
+  font-size: 14px;
+  vertical-align: middle;
 }
 
 .drag-note {

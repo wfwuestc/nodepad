@@ -21,19 +21,25 @@ ul.note {
 .note-title {
   text-align: center;
   padding: 5px 10px;
-  background: #9ea9ff;
+  background: #efeca2;
   font-weight: bold;
+}
+.note-title:focus {
+  outline: none;
 }
 .note-content {
   padding: 5px 5px 20px;
   min-height: 150px;
   font-size: 14px;
 }
+.note-content:focus {
+  outline: none;
+}
 .note-item {
   position: absolute;
   display: block;
   width: 165px;
-  background: #ffc5fa;
+  background: #d8e095;
   margin: 20px 10px;
   transition: all 1s;
 }
@@ -41,7 +47,20 @@ ul.note {
   opacity: 1;
 }
 .note-item:hover .delete-note:hover {
-  color: white;
+  color: #ff0a00;
+  transform: scale(1.5);
+}
+.note-item .username,
+.note-item .time {
+  text-align: right;
+  padding-right: 5px;
+  font-size: small;
+}
+.note-item .username {
+  color: #2e52a2;
+}
+.note-item .time {
+  color: #2e52a2;
 }
 .note-item > .before {
   margin: 8px 4px;
@@ -55,14 +74,17 @@ ul.note {
 }
 .delete-note {
   float: right;
-  margin: 0px 5px;
-  color: red;
-  height: 25px;
-  line-height: 25px;
+  margin: 10px 5px;
+  color: #ff1207;
   cursor: pointer;
   transition: all 0.5s;
   text-align: center;
   opacity: 0;
+}
+.delete-note:before {
+  content: "\E61C";
+  font-size: 14px;
+  vertical-align: middle;
 }
 .drag-note {
   transition: none;
@@ -77,10 +99,10 @@ div {
 }
 .head {
   width: 100%;
-  display: flex;
   flex-direction: row;
+  display: flex;
   justify-content: space-between;
-  background: rgba(101, 228, 63, 0.5);
+  background: rgba(46, 49, 56, 0.7);
   color: white;
 }
 #add-note {
@@ -93,13 +115,30 @@ div {
   transform: scale(1.3);
   color: gold;
 }
+#add {
+  width: 150px;
+}
 #title {
   padding: 10px;
   font-size: larger;
 }
 #login {
+  width: 150px;
   padding: 10px 20px;
-  cursor: pointer;
+  text-align: right;
+}
+#login a {
+  text-decoration: none;
+  color: white;
+}
+#login a:hover {
+  color: red;
+}
+#login img {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  vertical-align: middle;
 }
 .background {
   position: fixed;
@@ -107,7 +146,7 @@ div {
   bottom: 0;
   right: 0;
   left: 0;
-  background: url("https://ooo.0o0.ooo/2017/09/28/59cc7520519c7.png");
+  background: url("https://i.loli.net/2017/10/01/59d0d9585a783.jpg");
   z-index: -1;
   background-size: 100% 100%;
 }
@@ -126,4 +165,22 @@ div {
 }
 .sort:hover {
   opacity: 0.7;
+}
+@font-face {
+  font-family: 'iconfont';
+  /* project id 432948 */
+  src: url('//at.alicdn.com/t/font_432948_g5ea1umeheuyp66r.eot');
+  src: url('//at.alicdn.com/t/font_432948_g5ea1umeheuyp66r.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_432948_g5ea1umeheuyp66r.woff') format('woff'), url('//at.alicdn.com/t/font_432948_g5ea1umeheuyp66r.ttf') format('truetype'), url('//at.alicdn.com/t/font_432948_g5ea1umeheuyp66r.svg#iconfont') format('svg');
+}
+.iconfont {
+  font-family: "iconfont";
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+#login:before {
+  content: "\E618";
+  font-size: 20px;
+  vertical-align: middle;
+  padding: 10px;
 }

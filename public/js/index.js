@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -10327,148 +10327,6 @@ return jQuery;
 /* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;__webpack_require__(2)
-__webpack_require__(3)
-__webpack_require__(4)
-
-
-!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(5),__webpack_require__(6),__webpack_require__(8),__webpack_require__(0)], __WEBPACK_AMD_DEFINE_RESULT__ = function (toast, Note, Waterfall, $) {
-  $('#add-note').on('click', function () {
-    new Note()
-    Waterfall()
-  })
-
-  $('.sort').on('click', function () {
-    Waterfall()
-  })
-}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__))
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(0)], __WEBPACK_AMD_DEFINE_RESULT__ = function ($) {
-  function toast(msg, time) {
-    this.msg = msg
-    this.dismissTime = time||1000
-    this.createToast()
-    this.showToast()
-  }
-
-  toast.prototype.createToast = function () {
-    var toast = '<div class="toast">' + this.msg + '</div>'
-    this.$toast = $(toast)
-    $('body').append(this.$toast)
-  }
-
-  toast.prototype.showToast = function () {
-    var _this = this
-    this.$toast.fadeIn(300,function () {
-      setTimeout(function () {
-        _this.$toast.fadeOut(300,function () {
-          _this.$toast.remove()
-        })
-      }, _this.dismissTime)
-    })
-  }
-
-  return toast
-}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__))
-
-
-
-
-/***/ }),
-/* 6 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
-!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(0),__webpack_require__(7)], __WEBPACK_AMD_DEFINE_RESULT__ = function ($, Event) {
-  var log = console.log.bind(console)
-
-  function Note() {
-    this.AddNote('add title', 'add something')
-    this.remove()
-    this.clear()
-    this.drag()
-
-  }
-
-  Note.prototype.AddNote = function (title, msg) {
-    var temp = '<li class="note-item" style="top: -20px; left: 50px;"><div class="before"></div><p class="delete-note">×</p>'+
-        '<div class="note-title" contenteditable="true" edit="no">' + title + '</div>' +
-        '<div class="note-content" contenteditable="true" edit="no">' + msg + '</div>' +
-        '</li>'
-    var $node = $(temp)
-    $('ul.note').append($node)
-  }
-
-  Note.prototype.remove = function () {
-    $('.delete-note').on('click', function () {
-      $(this).parent().remove()
-    })
-  }
-
-  Note.prototype.clear = function () {
-    $('.note-content, .note-title').on('click', function () {
-      var $edit = $(this).attr('edit')
-      if ($edit === 'no') {
-        $(this).empty()
-        $(this).attr('edit', 'yes')
-      }
-    })
-  }
-
-  Note.prototype.drag = function () {
-    $('.note-item>.before').on('mousedown', function (e) {
-      var _this = $(this).parent()
-
-      var XX = e.pageY - _this.offset().top
-      var YY = e.pageX - _this.offset().left + 7
-
-      _this.addClass('drag-note')
-          .data('evtPos', {x:XX, y:YY})
-      $('body').on('mousemove', function (e) {
-          log($('.drag-note').data('evtPos'))
-          _this.offset({
-            "top": e.pageY - $('.drag-note').data('evtPos').y ,
-            "left": e.pageX - $('.drag-note').data('evtPos').x
-          })
-      }).on('mouseup', function () {
-        _this.removeClass('drag-note').removeData('evtPos')
-        $('body').off('mousemove')
-      })
-    })
-  }
-  return Note
-}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__))
-
-
-/***/ }),
-/* 7 */
-/***/ (function(module, exports, __webpack_require__) {
-
 var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = function(){
 
   var events = {};
@@ -10498,7 +10356,295 @@ var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = function(){
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__))
 
 /***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(0)], __WEBPACK_AMD_DEFINE_RESULT__ = function ($) {
+  function toast(msg, time) {
+    this.msg = msg
+    this.dismissTime = time||1000
+    this.createToast()
+    this.showToast()
+  }
+
+  toast.prototype.createToast = function () {
+    var toast = '<div class="toast">' + this.msg + '</div>'
+    this.$toast = $(toast)
+    $('body').append(this.$toast)
+  }
+
+  toast.prototype.showToast = function () {
+    var _this = this
+    this.$toast.fadeIn(300,function () {
+      setTimeout(function () {
+        _this.$toast.fadeOut(300,function () {
+          _this.$toast.remove()
+        })
+      }, _this.dismissTime)
+    })
+  }
+  function Toast(msg,time){
+    return new toast(msg, time);
+  }
+  return Toast
+}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__))
+
+
+
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(4)
+__webpack_require__(5)
+__webpack_require__(6)
+
+var $ = __webpack_require__(0)
+var NoteManager = __webpack_require__(7).NoteManager;
+var Event = __webpack_require__(1);
+var WaterFall = __webpack_require__(9);
+NoteManager.load();
+
+$('#add-note').on('click', function() {
+  NoteManager.add();
+})
+
+Event.on('waterfall', function(){
+  WaterFall();
+})
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Note = __webpack_require__(8);
+var Toast = __webpack_require__(2);
+var Event = __webpack_require__(1);
+var $ = __webpack_require__(0)
+
+var NoteManager = (function(){
+
+  function load() {
+    $.get('/api/notes')
+      .done(function(ret){
+        if(ret.status == 0){
+          $.each(ret.data, function(idx, article) {
+              console.log('article',article)
+              new Note({
+                id: article.id,
+                content: article.content,
+                title: article.title,
+                username: article.username,
+                time: new Date(parseInt(article.updatedAt)).toLocaleString('chinese',{hour12:false})
+              });
+          });
+
+          Event.fire('waterfall');
+        }else{
+          Toast(ret.errorMsg);
+        }
+      })
+      .fail(function(){
+        Toast('网络异常');
+      });
+
+
+  }
+
+  function add(){
+    new Note();
+  }
+
+  return {
+    load: load,
+    add: add
+  }
+
+})();
+
+module.exports.NoteManager = NoteManager
+
+/***/ }),
 /* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(0), __webpack_require__(1), __webpack_require__(2)], __WEBPACK_AMD_DEFINE_RESULT__ = function ($, Event, Toast) {
+  var log = console.log.bind(console)
+
+  function Note(opts) {
+    console.log(1,opts)
+    this.initOpts(opts)
+    this.AddNote()
+    this.bindEvent()
+  }
+
+  Note.prototype = {
+    defaultOpts: {
+      id: '',   //Note的 id
+      $ct: $('ul.note').length > 0 ? $('ul.note') : $('body'),  //默认存放 Note 的容器
+      content: 'input here', //Note 的内容
+      title: 'input title',
+      time: '',
+      username: ''
+    },
+    initOpts: function (opts) {
+      this.opts = $.extend({}, this.defaultOpts, opts || {})
+      console.log(2,this.opts)
+      if (this.opts.id) {
+        this.id = this.opts.id
+      }
+    },
+    edit: function (title, content) {
+      var self = this
+      $.post('/api/notes/edit', {
+        id: this.id,
+        title: title,
+        content: content,
+      }).done(function (ret) {
+        if (ret.status === 0) {
+          Toast('update success')
+        } else {
+          Toast(ret.errorMsg)
+        }
+      })
+    },
+
+    add: function (title, content) {
+      console.log('addd...')
+      var self = this
+      $.post('/api/notes/add', {title: title, content: content})
+          .done(function (ret) {
+            if (ret.status === 0) {
+              self.id = ret.result.id
+              var name = 'By ' + ret.result.username
+              self.time = new Date(ret.result.createdAt).toLocaleString('chinese',{hour12:false})
+              self.$note.find('.username').html(name)
+              self.$note.find('.time').html(self.time)
+              Toast('add success')
+            } else {
+              self.$note.remove()
+              Event.fire('waterfall')
+              Toast(ret.errorMsg)
+            }
+          })
+      //todo
+    },
+
+    delete: function () {
+      var self = this
+      $.post('/api/notes/delete', {id: this.id})
+          .done(function (ret) {
+            if (ret.status === 0) {
+              Toast('delete success')
+              self.$note.remove()
+              Event.fire('waterfall')
+            } else {
+              Toast(ret.errorMsg)
+            }
+          })
+    },
+    bindEvent: function () {
+      var self = this,
+          $note = this.$note,
+          $noteHead = $note.find('.before'),
+          $noteCt = $note.find('.note-content'),
+          $noteTl = $note.find('.note-title'),
+          $noteCT = $note.find('.note-title,.note-content')
+      $delete = $note.find('.delete-note')
+      $delete.on('click', function () {
+        self.delete()
+      })
+
+      //contenteditable没有 change 事件，所有这里做了模拟通过判断元素内容变动，执行 save
+      $noteCT.on('focus', function () {
+        if ($(this).html() === self.defaultOpts.content || $(this).html() === self.defaultOpts.title && !($note.hasClass('drag-note'))) {
+          $(this).empty()
+        }
+        $(this).data('before', $(this).html())
+      }).on('blur paste', function () {
+        if ($(this).data('before') != $(this).html()) {
+          $(this).data('before', $(this).html())
+          self.setLayout()
+          if (self.id) {
+            self.edit($noteTl.html(), $noteCt.html())
+          } else {
+            self.add($noteTl.html(), $noteCt.html())
+          }
+        }
+      })
+
+      //设置笔记的移动
+      $noteHead.on('mousedown', function (e) {
+        console.log('3')
+        var XX = e.pageY - $note.offset().top - 4
+        var YY = e.pageX - $note.offset().left + 4
+        $note.addClass('drag-note')
+            .data('evtPos', {x: XX, y: YY})
+        $('body').on('mousemove', function (e) {
+          $note.offset({
+            "top": e.pageY - $('.drag-note').data('evtPos').y,
+            "left": e.pageX - $('.drag-note').data('evtPos').x,
+          })
+        }).on('mouseup', function () {
+          $note.removeClass('drag-note').removeData('evtPos')
+          $('body').off('mousemove')
+        })
+      })
+    },
+    setLayout: function () {
+      var self = this
+      if (self.clk) {
+        clearTimeout(self.clk)
+      }
+      self.clk = setTimeout(function () {
+        Event.fire('waterfall')
+      }, 100)
+    },
+  }
+
+  Note.prototype.AddNote = function () {
+    var temp = '<li class="note-item" style="top: -20px; left: 50px;"><div class="before"></div><p class="iconfont delete-note"></p>' +
+        '<div class="note-title" contenteditable="true" edit="no">' + this.opts.title + '</div>' +
+        '<div class="note-content" contenteditable="true" edit="no">' + this.opts.content + '</div>' + '<p class="username">' + this.opts.username + '</p>' +
+        '<p class="time">' + this.opts.time + '</p></li>'
+    this.$note = $(temp)
+    this.opts.$ct.append(this.$note)
+    if (!this.id) {
+      this.$note.siblings().css('zIndex', 0)
+      this.$note.css({zIndex: 999, left: '10px', top: '100px'})
+    }
+
+
+    Event.fire('waterfall')
+  }
+
+  return Note
+}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__))
+
+
+/***/ }),
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
@@ -10513,7 +10659,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
     for (var i = 0; i < colNum; i++) {
       colSumHeight[i] = 0
     }
-    console.log(colSumHeight)
+    
     $('.note-item').each(function () {
       var cur = $(this)
       var idx = 0

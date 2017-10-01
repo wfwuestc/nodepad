@@ -3,7 +3,18 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'NodePad' });
+  var loginData;
+  if (req.session.user) {
+    loginData = {
+      isLogin: true,
+      user: req.session.user
+    }
+  } else {
+    loginData = {
+      isLogin: false
+    }
+  }
+  res.render('index', loginData);
 });
 
 module.exports = router;

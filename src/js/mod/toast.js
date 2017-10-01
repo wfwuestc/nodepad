@@ -22,8 +22,10 @@ define(['jquery'],function ($) {
       }, _this.dismissTime)
     })
   }
-
-  return toast
+  function Toast(msg,time){
+    return new toast(msg, time);
+  }
+  return Toast
 })
 
 

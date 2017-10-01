@@ -1,22 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title><% title %></title>
-  <link rel="stylesheet" href="css/main.css">
+    <meta charset="UTF-8">
+    <title>Node Pad</title>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 <div class="head">
-  <p id="add-note"> + </p>
-  <p id="title">Node Pad</p>
-  <div id="login"><a href="/auth/github">Login</a></div>
+    <p id="add-note"> + </p>
+    <p id="title"> </p>
+    <%if(isLogin) { %>
+    <div id="login">
+        <img src="<%= user.avatar %>" alt="">
+        <span><%= user.username %></span>
+        <span class="line"> | </span>
+        <a class="logout" href="/auth/logout">注销</a>
+    </div>
+
+    <%} else { %>
+    <div id="login" class="iconfont"><a href="/auth/github">Login</a></div>
+    <% } %>
 </div>
 <div class="content">
-  <div class="background"></div>
-  <div id="note-wrap">
-    <ul class="note">
-    </ul>
-  </div>
+    <div class="background"></div>
+    <div id="note-wrap">
+        <ul class="note">
+        </ul>
+    </div>
 </div>
 <div class="sort">SORT</div>
 <script src="js/index.js"></script>
