@@ -15,7 +15,7 @@ var NoteManager = (function(){
                 id: article.id,
                 content: article.content,
                 title: article.title,
-                username: article.username,
+                username: 'By ' + article.username,
                 time: new Date(parseInt(article.updatedAt)).toLocaleString('chinese',{hour12:false})
               });
           });

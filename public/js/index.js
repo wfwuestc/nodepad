@@ -10454,7 +10454,7 @@ var NoteManager = (function(){
                 id: article.id,
                 content: article.content,
                 title: article.title,
-                username: article.username,
+                username: 'By ' + article.username,
                 time: new Date(parseInt(article.updatedAt)).toLocaleString('chinese',{hour12:false})
               });
           });
@@ -10522,6 +10522,8 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
         content: content,
       }).done(function (ret) {
         if (ret.status === 0) {
+          self.time = new Date(ret.time).toLocaleString('chinese',{hour12:false})
+          self.$note.find('.time').html(self.time)
           Toast('update success')
         } else {
           Toast(ret.errorMsg)

@@ -134,6 +134,18 @@ div {
 #login a:hover {
   color: red;
 }
+#login2 {
+  width: 150px;
+  padding: 10px 20px;
+  text-align: right;
+}
+#login2 a {
+  text-decoration: none;
+  color: white;
+}
+#login2 a:hover {
+  color: red;
+}
 #login img {
   height: 25px;
   width: 25px;
@@ -178,7 +190,7 @@ div {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-#login:before {
+#login2:before {
   content: "\E618";
   font-size: 20px;
   vertical-align: middle;

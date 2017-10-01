@@ -32,6 +32,8 @@ define(['jquery', './event', './toast'], function ($, Event, Toast) {
         content: content,
       }).done(function (ret) {
         if (ret.status === 0) {
+          self.time = new Date(ret.time).toLocaleString('chinese',{hour12:false})
+          self.$note.find('.time').html(self.time)
           Toast('update success')
         } else {
           Toast(ret.errorMsg)
