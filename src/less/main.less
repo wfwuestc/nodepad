@@ -72,29 +72,35 @@ body, p, div {
   background-size:100% 100%;
 }
 .sort {
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   position: fixed;
   bottom: 20px;
   left: 20px;
-  color: #ff5f4e;
-  line-height: 60px;
-  background: yellow;
+  color: #c8ff6f;
+  line-height: 40px;
   text-align: center;
   cursor: pointer;
+  opacity: 0.7;
   &:hover{
-    opacity: 0.7;
+    opacity: 1
   }
+}
+.sort:before {
+  content: "\e62b";
+  font-size: 35px;
+  vertical-align: middle;
+  padding: 10px;
 }
 
 @font-face {
   font-family: 'iconfont';  /* project id 432948 */
-  src: url('//at.alicdn.com/t/font_432948_g5ea1umeheuyp66r.eot');
-  src: url('//at.alicdn.com/t/font_432948_g5ea1umeheuyp66r.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_432948_g5ea1umeheuyp66r.woff') format('woff'),
-  url('//at.alicdn.com/t/font_432948_g5ea1umeheuyp66r.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_432948_g5ea1umeheuyp66r.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_432948_t10sdxkpo0d1v2t9.eot');
+  src: url('//at.alicdn.com/t/font_432948_t10sdxkpo0d1v2t9.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_432948_t10sdxkpo0d1v2t9.woff') format('woff'),
+  url('//at.alicdn.com/t/font_432948_t10sdxkpo0d1v2t9.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_432948_t10sdxkpo0d1v2t9.svg#iconfont') format('svg');
 }
 
 .iconfont {

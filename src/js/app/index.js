@@ -11,7 +11,9 @@ NoteManager.load();
 $('#add-note').on('click', function() {
   NoteManager.add();
 })
-
+$('.sort').on('click', function () {
+  WaterFall();
+})
 Event.on('waterfall', function(){
   WaterFall();
 })

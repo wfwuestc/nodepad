@@ -2,6 +2,8 @@ var path =require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var webpack = require('webpack')
 var autoprefixer = require('autoprefixer')
+var UglifyJSPlugin = require('uglifyjs-webpack-plugin')
+
 module.exports = {
 //入口
   entry: {
@@ -25,6 +27,7 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin('../css/main.css'),
+    new UglifyJSPlugin()
     // new webpack.LoaderOptionsPlugin({
     //   options: {
     //     postcss: [
