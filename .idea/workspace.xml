@@ -175,7 +175,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="501" />
+    <option name="x" value="721" />
+    <option name="y" value="12" />
     <option name="width" value="1165" />
     <option name="height" value="1016" />
   </component>
@@ -265,7 +266,49 @@
             <path>
               <item name="nodepad" type="b2602c69:ProjectViewProjectNode" />
               <item name="nodepad" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nodepad" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nodepad" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nodepad" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nodepad" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nodepad" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nodepad" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nodepad" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nodepad" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nodepad" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nodepad" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nodepad" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nodepad" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nodepad" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nodepad" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="mod" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="nodepad" type="b2602c69:ProjectViewProjectNode" />
@@ -338,7 +381,7 @@
       <workItem from="1506841666586" duration="14874000" />
       <workItem from="1506857326933" duration="8378000" />
       <workItem from="1506902592192" duration="1471000" />
-      <workItem from="1506933090612" duration="5059000" />
+      <workItem from="1506933090612" duration="5662000" />
     </task>
     <task id="LOCAL-00001" summary="express init">
       <created>1506418312197</created>
@@ -372,7 +415,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96157000" />
+    <option name="totallyTimeSpent" value="96760000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -384,10 +427,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="501" y="0" width="1165" height="1016" extended-state="0" />
-    <editor active="true" />
+    <frame x="721" y="12" width="1165" height="1016" extended-state="0" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15971605" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15971605" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3119469" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32964602" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
