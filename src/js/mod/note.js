@@ -122,6 +122,12 @@ define(['jquery', './event', './toast'], function ($, Event, Toast) {
           $('body').off('mousemove')
         })
       })
+	  
+	  $noteTl.on('keydown' ,function (e) {
+        if(e.keyCode === 13){
+          $noteCt.focus()
+        }
+      })
     },
     setLayout: function () {
       var self = this
