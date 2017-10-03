@@ -107,7 +107,7 @@ define(['jquery', './event', './toast'], function ($, Event, Toast) {
 
       //设置笔记的移动
       $noteHead.on('mousedown', function (e) {
-        console.log('3')
+        log('mousedown')
         var XX = e.pageY - $note.offset().top - 4
         var YY = e.pageX - $note.offset().left + 4
         $note.addClass('drag-note')
@@ -122,6 +122,14 @@ define(['jquery', './event', './toast'], function ($, Event, Toast) {
           $('body').off('mousemove')
         })
       })
+
+      $noteTl.on('keydown' ,function (e) {
+        if(e.keyCode === 13){
+          $noteCt.focus()
+        }
+      })
+
+
     },
     setLayout: function () {
       var self = this

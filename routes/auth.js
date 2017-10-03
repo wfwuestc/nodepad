@@ -18,8 +18,8 @@ passport.deserializeUser(function(obj, done) {
 });
 
 passport.use(new GitHubStrategy({
-  clientID: 'dc4d7159174106db0071',
-  clientSecret: '7e53f7f21e1a531a7016376dd55fa54f1a4e4044',
+  clientID: 'a5f28c3e23bf7cd839c4',
+  clientSecret: 'd043ffcd0263fcd4affc249bddba3df2b55ea7e3',
   callbackURL: "http://localhost:3000/auth/github/callback"
 }, function(accessToken, refreshToken, profile, done) {
   done(null, profile);
