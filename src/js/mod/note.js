@@ -122,7 +122,7 @@ define(['jquery', './event', './toast'], function ($, Event, Toast) {
           $('body').off('mousemove')
         })
       })
-	  
+	  //添加回车功能
 	  $noteTl.on('keydown' ,function (e) {
         if(e.keyCode === 13){
           $noteCt.focus()
